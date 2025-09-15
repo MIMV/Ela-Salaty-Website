@@ -78,3 +78,4 @@ I included image of the logo and 2 screenshots
 The images links are not working
 Remove the photo under the Lean More button and Download on App Store
 on CLick on the switch on Breathtaking Themes change the boxs colors to darker version
+The footer image near Ela-Salaty word is not loading
