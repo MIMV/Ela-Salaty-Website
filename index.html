@@ -17,6 +17,42 @@
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #f8fafc;
+            transition: all 0.5s ease;
+        }
+        
+        body.light-mode {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #0f172a;
+        }
+        
+        body.light-mode .islamic-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        body.light-mode nav {
+            background: rgba(248, 250, 252, 0.8);
+            border-bottom-color: rgba(249, 115, 22, 0.2);
+        }
+        
+        body.light-mode .feature-card,
+        body.light-mode .prayer-time,
+        body.light-mode .bg-slate-800\/50,
+        body.light-mode .bg-slate-900\/50 {
+            background: rgba(248, 250, 252, 0.7);
+            border-color: rgba(249, 115, 22, 0.2);
+        }
+        
+        body.light-mode .text-slate-300,
+        body.light-mode .text-slate-400 {
+            color: #475569;
+        }
+        
+        body.light-mode .bg-slate-900 {
+            background: #f1f5f9;
+        }
+        
+        body.light-mode .border-slate-700 {
+            border-color: #cbd5e1;
         }
         
         .islamic-pattern {
@@ -125,10 +161,14 @@
                 <span class="text-2xl font-bold text-orange-500">Ela-Salaty</span>
             </div>
             
-            <div class="hidden md:flex space-x-8">
+            <div class="hidden md:flex space-x-8 items-center">
                 <a href="#features" class="text-slate-200 hover:text-orange-500 transition-colors">Features</a>
                 <a href="#screenshots" class="text-slate-200 hover:text-orange-500 transition-colors">Screenshots</a>
                 <a href="#download" class="text-slate-200 hover:text-orange-500 transition-colors">Download</a>
+                <button id="theme-toggle-btn" class="p-2 rounded-lg bg-slate-700 hover:bg-orange-500 transition-colors">
+                    <i id="sun-icon" data-feather="sun" class="w-5 h-5 text-yellow-400 hidden"></i>
+                    <i id="moon-icon" data-feather="moon" class="w-5 h-5 text-slate-200"></i>
+                </button>
             </div>
             
             <div class="md:hidden">
@@ -597,6 +637,48 @@
                     themeBox1.classList.add('from-blue-900', 'to-purple-900');
                     themeBox2.classList.remove('from-amber-700', 'to-orange-800');
                     themeBox2.classList.add('from-amber-500', 'to-orange-600');
+                }
+            });
+        }
+
+        // Light/Dark mode toggle for the whole website
+        const themeToggleBtn = document.getElementById('theme-toggle-btn');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        let isDarkMode = true;
+
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                isDarkMode = !isDarkMode;
+                
+                if (isDarkMode) {
+                    // Switch to dark mode
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark-mode');
+                    sunIcon.classList.add('hidden');
+                    moonIcon.classList.remove('hidden');
+                    // Update particles color
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: { value: 100, density: { enable: true, value_area: 800 } },
+                            color: { value: "#f97316" },
+                            // ... rest of dark mode particles config
+                        }
+                    });
+                } else {
+                    // Switch to light mode
+                    document.body.classList.remove('dark-mode');
+                    document.body.classList.add('light-mode');
+                    sunIcon.classList.remove('hidden');
+                    moonIcon.classList.add('hidden');
+                    // Update particles color
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: { value: 100, density: { enable: true, value_area: 800 } },
+                            color: { value: "#0f172a" },
+                            // ... rest of light mode particles config
+                        }
+                    });
                 }
             });
         }
