@@ -121,7 +121,7 @@
     <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-orange-500/20">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <img src="/placeholder/logo.png" alt="Ela-Salaty Logo" class="h-10 w-10">
+                <img src="https://huggingface.co/spaces/iTarekX/ela-salaty/resolve/main/images/IconDark.png" alt="Ela-Salaty Logo" class="h-10 w-10">
                 <span class="text-2xl font-bold text-orange-500">Ela-Salaty</span>
             </div>
             
@@ -152,7 +152,7 @@
     <section class="min-h-screen flex items-center justify-center pt-20 pb-16 px-4">
         <div class="container mx-auto text-center">
             <div data-aos="fade-up" data-aos-duration="1000" class="mb-8">
-                <img src="/placeholder/logo.png" alt="Ela-Salaty Logo" class="h-32 w-32 mx-auto mb-6">
+                <img src="https://huggingface.co/spaces/iTarekX/ela-salaty/resolve/main/images/IconDark.png" alt="Ela-Salaty Logo" class="h-32 w-32 mx-auto mb-6">
                 <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-500">Ela-Salaty</h1>
                 <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10">
                     Your trusted prayer companion with 100% privacy, no ads, and no data collection
@@ -171,12 +171,6 @@
                 </div>
             </div>
             
-            <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" class="mt-16 relative">
-                <div class="hero-gradient absolute -inset-40 -z-10"></div>
-                <div class="islamic-border rounded-2xl p-1 inline-block">
-                    <img src="/placeholder/iphone-mockup.png" alt="Ela-Salaty App" class="rounded-2xl w-full max-w-sm mx-auto shadow-2xl">
-                </div>
-            </div>
         </div>
     </section>
     
@@ -310,12 +304,12 @@
                         Beautiful themes that change according to day and night. Switch with a single tap of the screen.
                     </p>
                     <div class="relative">
-                        <div class="theme-switch h-10 w-20 rounded-full p-1 flex items-center cursor-pointer mb-4">
-                            <div class="theme-toggle w-8 h-8 rounded-full bg-white shadow-md transform translate-x-0"></div>
+                        <div class="theme-switch h-10 w-20 rounded-full p-1 flex items-center cursor-pointer mb-4" id="theme-switch">
+                            <div class="theme-toggle w-8 h-8 rounded-full bg-white shadow-md transform translate-x-0" id="theme-toggle"></div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="theme-card rounded-xl overflow-hidden h-24 bg-gradient-to-br from-blue-900 to-purple-900"></div>
-                            <div class="theme-card rounded-xl overflow-hidden h-24 bg-gradient-to-br from-amber-500 to-orange-600"></div>
+                            <div class="theme-card theme-box-1 rounded-xl overflow-hidden h-24 bg-gradient-to-br from-blue-900 to-purple-900"></div>
+                            <div class="theme-card theme-box-2 rounded-xl overflow-hidden h-24 bg-gradient-to-br from-amber-500 to-orange-600"></div>
                         </div>
                     </div>
                 </div>
@@ -373,25 +367,25 @@
             <div class="flex overflow-x-auto pb-10 space-x-6 snap-x snap-mandatory">
                 <div data-aos="zoom-in" data-aos-delay="100" class="flex-shrink-0 w-80 snap-center">
                     <div class="islamic-border rounded-3xl p-2 bg-slate-800/50 backdrop-blur-md">
-                        <img src="/placeholder/iphone-screenshot-1.png" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
+                        <img src="https://huggingface.co/spaces/iTarekX/ela-salaty/resolve/main/images/IMG_5401.PNG" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
                     </div>
                 </div>
                 
                 <div data-aos="zoom-in" data-aos-delay="200" class="flex-shrink-0 w-80 snap-center">
                     <div class="islamic-border rounded-3xl p-2 bg-slate-800/50 backdrop-blur-md">
-                        <img src="/placeholder/iphone-screenshot-2.png" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
+                        <img src="https://huggingface.co/spaces/iTarekX/ela-salaty/resolve/main/images/IMG_5402.PNG" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
                     </div>
                 </div>
                 
                 <div data-aos="zoom-in" data-aos-delay="300" class="flex-shrink-0 w-80 snap-center">
                     <div class="islamic-border rounded-3xl p-2 bg-slate-800/50 backdrop-blur-md">
-                        <img src="/placeholder/iphone-screenshot-3.png" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
+                        <img src="https://huggingface.co/spaces/iTarekX/ela-salaty/resolve/main/images/IMG_5401.PNG" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
                     </div>
                 </div>
                 
                 <div data-aos="zoom-in" data-aos-delay="400" class="flex-shrink-0 w-80 snap-center">
                     <div class="islamic-border rounded-3xl p-2 bg-slate-800/50 backdrop-blur-md">
-                        <img src="/placeholder/iphone-screenshot-4.png" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
+                        <img src="https://huggingface.co/spaces/iTarekX/ela-salaty/resolve/main/images/IMG_5402.PNG" alt="Ela-Salaty App Screenshot" class="rounded-2xl shadow-xl">
                     </div>
                 </div>
             </div>
@@ -581,13 +575,29 @@
             retina_detect: true
         });
         
-        // Theme toggle animation
-        const themeToggle = document.querySelector('.theme-toggle');
-        const themeSwitch = document.querySelector('.theme-switch');
+        // Theme toggle animation and color change
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeSwitch = document.getElementById('theme-switch');
+        const themeBox1 = document.querySelector('.theme-box-1');
+        const themeBox2 = document.querySelector('.theme-box-2');
+        let isDarkTheme = false;
         
         if (themeSwitch) {
             themeSwitch.addEventListener('click', function() {
+                isDarkTheme = !isDarkTheme;
                 themeToggle.classList.toggle('translate-x-10');
+                
+                if (isDarkTheme) {
+                    themeBox1.classList.remove('from-blue-900', 'to-purple-900');
+                    themeBox1.classList.add('from-blue-950', 'to-purple-950');
+                    themeBox2.classList.remove('from-amber-500', 'to-orange-600');
+                    themeBox2.classList.add('from-amber-700', 'to-orange-800');
+                } else {
+                    themeBox1.classList.remove('from-blue-950', 'to-purple-950');
+                    themeBox1.classList.add('from-blue-900', 'to-purple-900');
+                    themeBox2.classList.remove('from-amber-700', 'to-orange-800');
+                    themeBox2.classList.add('from-amber-500', 'to-orange-600');
+                }
             });
         }
     </script>
