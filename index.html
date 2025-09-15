@@ -641,6 +641,33 @@
             });
         }
 
+        // Set default to night mode on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.remove('light-mode');
+            document.body.classList.add('dark-mode');
+            document.getElementById('sun-icon').classList.add('hidden');
+            document.getElementById('moon-icon').classList.remove('hidden');
+            
+            // Initialize particles with night mode colors
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 100, density: { enable: true, value_area: 800 } },
+                    color: { value: "#f97316" },
+                    shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
+                    opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+                    size: { value: 3, random: true, anim: { enable: true, speed: 2, size_min: 0.1, sync: false } },
+                    line_linked: { enable: true, distance: 150, color: "#f97316", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 1, direction: "none", random: true, straight: false, out_mode: "out", bounce: false }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: { onhover: { enable: true, mode: "grab" }, onclick: { enable: true, mode: "push" }, resize: true },
+                    modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, push: { particles_nb: 4 } }
+                },
+                retina_detect: true
+            });
+        });
+
         // Light/Dark mode toggle for the whole website
         const themeToggleBtn = document.getElementById('theme-toggle-btn');
         const sunIcon = document.getElementById('sun-icon');
@@ -657,28 +684,12 @@
                     document.body.classList.add('dark-mode');
                     sunIcon.classList.add('hidden');
                     moonIcon.classList.remove('hidden');
-                    // Update particles color
-                    particlesJS('particles-js', {
-                        particles: {
-                            number: { value: 100, density: { enable: true, value_area: 800 } },
-                            color: { value: "#f97316" },
-                            // ... rest of dark mode particles config
-                        }
-                    });
                 } else {
                     // Switch to light mode
                     document.body.classList.remove('dark-mode');
                     document.body.classList.add('light-mode');
                     sunIcon.classList.remove('hidden');
                     moonIcon.classList.add('hidden');
-                    // Update particles color
-                    particlesJS('particles-js', {
-                        particles: {
-                            number: { value: 100, density: { enable: true, value_area: 800 } },
-                            color: { value: "#0f172a" },
-                            // ... rest of light mode particles config
-                        }
-                    });
                 }
             });
         }
