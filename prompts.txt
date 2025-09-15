@@ -83,3 +83,16 @@ Add a sun and night glyphs on the topbar tha switch the background from black to
 There is a bug when switch the background, the particles background changed and become bigger
 I want the deafult to set to night mode
 When change from night mode to light mode do not change the particle colors leave the particles alone
+Right now the background color is not changed from black to white when switch the dark and light,
+
+the layers should be 
+Background (Change colors when switch)
+Particles (Do not change)
+The website
+
+Right now the background color is not changed from black to white when switch the dark and light,
+
+the layers should be 
+Background (Change colors when switch)
+Particles (Do not change)
+The website
