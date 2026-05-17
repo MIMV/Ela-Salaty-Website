@@ -760,7 +760,11 @@ html[dir="rtl"] .times-card__date { text-align: left; }
   gap: 70px;
   align-items: center;
 }
-@media (max-width: 880px) { .qibla-block { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 880px) {
+  .qibla-block { grid-template-columns: 1fr; gap: 64px; }
+  /* Reserve room for the .compass__deg pill that hangs 52px below the stage */
+  .qibla-stage { margin-bottom: 40px; }
+}
 
 .qibla-stage {
   position: relative;

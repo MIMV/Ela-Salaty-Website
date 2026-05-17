@@ -11,10 +11,10 @@ const PHASES = [
   { top:'#0a0e24', mid:'#1a1638', bot:'#2a1f3e', orbX:30, orbY:80, orbC:'#ff8a5b', orbG:'rgba(255,138,91,0.45)', stars:0.6 },
   // Sunrise/morning - dawn peach + blue
   { top:'#3a2a4a', mid:'#7a4f5a', bot:'#f5a878', orbX:40, orbY:55, orbC:'#ffd28a', orbG:'rgba(255,210,138,0.6)', stars:0.15 },
-  // Dhuhr - bright noon
-  { top:'#1e6fa3', mid:'#5dadff', bot:'#a8d8ff', orbX:55, orbY:25, orbC:'#fff7d1', orbG:'rgba(255,247,209,0.5)', stars:0 },
-  // Asr - warm afternoon
-  { top:'#3a4d6e', mid:'#c08560', bot:'#f0b878', orbX:70, orbY:45, orbC:'#ffae00', orbG:'rgba(255,174,0,0.55)', stars:0 },
+  // Dhuhr - midday (toned for readability)
+  { top:'#15406b', mid:'#2a609a', bot:'#3a75ad', orbX:55, orbY:25, orbC:'#fff7d1', orbG:'rgba(255,247,209,0.5)', stars:0 },
+  // Asr - warm afternoon (toned for readability)
+  { top:'#2f3f5d', mid:'#80543a', bot:'#a06a45', orbX:70, orbY:45, orbC:'#ffae00', orbG:'rgba(255,174,0,0.55)', stars:0 },
   // Maghrib - sunset
   { top:'#1f1530', mid:'#7a2a4a', bot:'#d97757', orbX:78, orbY:75, orbC:'#ff6b35', orbG:'rgba(255,107,53,0.6)', stars:0.3 },
   // Isha - deep night
